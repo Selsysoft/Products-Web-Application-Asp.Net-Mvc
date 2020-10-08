@@ -1,0 +1,40 @@
+﻿@using Mvc_Intermediate.Models;
+@model List<Kategori>
+
+<h4>Kategoriler</h4>
+<hr/>
+<div class="list-group">
+    @foreach (var kategori in Model)
+    {
+        if (kategori.KategoriAdi == "Telefon")
+        {
+            <a href="/Home/Phone" class="list-group-item list-group-item-action active">
+                @kategori.KategoriAdi
+            </a>
+           
+        }
+        if (kategori.KategoriAdi == "Bilgisayar")
+        {
+
+            <a href="/Home/Computer" class="list-group-item ">
+                @kategori.KategoriAdi
+            </a>
+        }
+        if (kategori.KategoriAdi == "Tablet")
+        {
+
+            <a href="/Home/Tablet" class="list-group-item ">
+                @kategori.KategoriAdi
+            </a>
+        }
+        if (kategori.KategoriAdi == "Aksesuar")
+        {
+
+            <a href="/Home/Accessory" class="list-group-item ">
+                @kategori.KategoriAdi
+            </a>
+        }
+    }
+</div>
+
+

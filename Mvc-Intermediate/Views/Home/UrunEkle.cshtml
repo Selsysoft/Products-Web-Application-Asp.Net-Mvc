@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "UrunEkle";
+}
+<h2>Ürün Ekle</h2>
+<hr />
+
+@using (Html.BeginForm("UrunEkle", "Home", FormMethod.Post))
+{
+<div class="form-horizontal">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="control-label col-md-3">Ürün Adı</label>
+        <div class="col-md-9">
+            @Html.TextBox("UrunAdi", null, new { @class = "form-control" })
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="control-label col-md-3">Ürün Türü</label>
+        <div class="col-md-9 ">
+                Telefon: @Html.RadioButton("Turu", "Telefon")
+                Tablet: @Html.RadioButton("Turu", "Tablet")
+                Bilgisayar: @Html.RadioButton("Turu", "Bilgisayar")
+                Aksesuar: @Html.RadioButton("Turu", "Aksesuar")
+        
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="control-label col-md-3">Ürün Açıklama</label>
+        <div class="col-md-9">
+            @Html.TextBox("Aciklama", null, new { @class = "form-control", MaxLength=80})
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="control-label col-md-3">Fiyat</label>
+        <div class="col-md-9">
+            @Html.TextBox("Fiyat", null, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="control-label col-md-3">Resim</label>
+        <div class="col-md-9">
+            @Html.TextBox("Resim", null, new { @class = "form-control" })
+       
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1" class="control-label col-md-3">Satıştamı?</label>
+        <div class="col-md-9">
+            Evet: @Html.RadioButton("Satistami", true)
+            Hayır: @Html.RadioButton("Satistami", false)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+    </div>
+
+
+</div>
+
+
+}

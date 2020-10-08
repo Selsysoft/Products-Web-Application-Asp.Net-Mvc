@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+        body{
+            margin-top:30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="/Home">Selsysoft</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.ActionLink("Home", "Index", "Home")
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">Products <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Home/Computer">Computer</a></li>
+                            <li><a href="/Home/Phone">Phone</a></li>
+                            <li><a href="/Home/Tablet">Tablet</a></li>
+                            <li><a href="/Home/Accessory">Accessory</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/Home/UrunEkle">Add Product</a>
+                    </li>
+                    <li>
+                        <a href="/Home/About">About</a>
+                    </li>
+
+                    <li><a href="/Home/Contact">Contact</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+
+    <div class="container body-content">
+
+        @if (IsSectionDefined("Kategori"))
+        {
+            <div class="row">
+                <div class="col-md-3">
+                    @RenderSection("Kategori", false)
+                </div>
+                <div class="col-md-9">
+                    @RenderBody()
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    @RenderBody()
+                </div>
+            </div>
+        }
+
+       
+
+        <hr />
+        <footer>
+            <div class="copyright">
+                <p> © 2020 Skills Profile Widget . All rights reserved | Design by <a href="https://www.linkedin.com/in/lselcukl/" target="_blank">Selçuk Türedi</a></p>
+            </div>
+        </footer>
+    </div>
+
+        <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

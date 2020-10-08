@@ -1,0 +1,45 @@
+﻿@using Mvc_Intermediate.Models;
+@model UrunKategoriModel
+@{
+    ViewBag.Title = "Tablet";
+}
+<div class="col-md-12" style="border-left:1px solid #eeeeee;height:1000px">
+    <h2>Tablet</h2>
+    <hr />
+    @section Kategori
+    {
+        @Html.Action("KategoriMenu", "Kategori")
+    }
+
+    <div class="col-md-12">
+        <div class="alert alert-success" role="alert">
+            Satışta olan <strong>@Model.UrunSayisi</strong> adet ürün listelendi.
+        </div>
+    </div>
+
+
+
+    @foreach (var urun in Model.Urunler)
+    {
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <img src="~/img/@urun.Resim" alt="..." />
+                <div class="caption">
+                    <h3>@urun.UrunAdi</h3>
+                    <p>
+
+                        @urun.Aciklama
+
+                    </p>
+                    <p>
+                        @*<a href="/Home/Details/?urunid=@urun.UrunId" class="btn btn-primary" role="button">Button</a>*@
+
+                        @Html.ActionLink("Ürünü İncele", "Details", new { id = urun.UrunId }, new { @class = "btn btn-primary" })
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    }
+    </div>

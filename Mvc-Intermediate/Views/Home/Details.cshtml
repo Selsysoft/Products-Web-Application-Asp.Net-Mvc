@@ -1,0 +1,19 @@
+﻿@model Mvc_Intermediate.Models.Urun
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="~/img/@Model.Resim" />
+    </div>
+    <div class="col-md-8">
+        <h2 class="page-header">@Model.UrunAdi</h2>
+        <p>
+            @Model.Aciklama
+        </p>
+        <p>
+            @Model.Fiyat
+        </p>
+    </div>
+</div>
